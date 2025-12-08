@@ -5,7 +5,6 @@
   <title>Siddharth Sharma</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Simple in-page styling so you don't need a separate CSS file yet -->
   <style>
     * {
       box-sizing: border-box;
@@ -29,7 +28,7 @@
       text-decoration: underline;
     }
 
-    /* Top nav */
+    /* Navigation bar */
     .nav {
       position: sticky;
       top: 0;
@@ -56,14 +55,14 @@
       font-size: 0.95rem;
     }
 
-    /* Main content */
+    /* Main layout */
     .page {
       max-width: 960px;
       margin: 0 auto;
       padding: 2rem 1.25rem 3rem 1.25rem;
     }
 
-    /* Hero row: name + tagline + links vs photo */
+    /* Hero layout */
     .hero {
       display: flex;
       flex-wrap: nowrap;
@@ -101,12 +100,6 @@
       font-size: 1.35rem;
     }
 
-    h3 {
-      margin-top: 1rem;
-      margin-bottom: 0.25rem;
-      font-size: 1.05rem;
-    }
-
     .subtitle {
       font-size: 1rem;
       color: #555;
@@ -119,107 +112,102 @@
       margin-bottom: 1rem;
     }
 
-    .icon-row {
-      margin-top: 0.6rem;
-      margin-bottom: 0.6rem;
-      font-size: 0.95rem;
-    }
-
     .icon-row a {
       margin-right: 1.2rem;
     }
 
     .icon-img {
-        width: 40px;
-        height: 40px;
-        vertical-align: middle;
-        margin-right: 0.5rem;
+      width: 40px;
+      height: 40px;
+      vertical-align: middle;
+      margin-right: 0.5rem;
     }
 
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    .cv-link {
-      margin-top: 0.75rem;
-      font-size: 0.95rem;
-    }
-
-    /* Full-width about text under the hero */
+    /* Full-width body text */
     .about-body {
-      margin-top: 2rem;        /* drops it a couple of lines below hero */
+      margin-top: 2rem;
     }
 
     .about-body p {
       margin-bottom: 1rem;
     }
 
-    @media (max-width: 700px) {
-      .nav-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.4rem;
-      }
-
-      .hero {
-        flex-wrap: wrap;
-      }
-
-      .hero-photo {
-        justify-content: center;
-      }
+    /* Publications — with thumbnails */
+    .pub-item {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      margin-bottom: 2.5rem;
     }
 
-        /* Publication list styling */
-    .pub-item {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 2rem;
+    .pub-thumb {
+      width: 160px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
     }
 
     .pub-info {
-        flex: 1;
+      flex: 1;
     }
 
     .pub-info h3 {
-        margin: 0;
-        font-size: 1.35rem;
-        font-weight: 600;
+      margin: 0;
+      font-size: 1.35rem;
+      font-weight: 600;
     }
 
     .pub-authors {
-        margin: 0.3rem 0 0.3rem 0;
-        color: #444;
+      margin: 0.3rem 0;
+      color: #444;
     }
 
     .pub-venue {
-        margin: 0.2rem 0 0.8rem 0;
-        font-size: 1rem;
-        color: #666;
+      margin: 0.2rem 0 0.8rem 0;
+      font-size: 1rem;
+      color: #666;
     }
 
     .pub-links {
-        display: flex;
-        gap: 0.75rem;
+      display: flex;
+      gap: 0.75rem;
     }
 
     .pub-button {
-        padding: 0.35rem 0.75rem;
-        border: 1px solid #333;
-        border-radius: 6px;
-        font-size: 0.9rem;
-        text-decoration: none;
-        color: #333;
+      padding: 0.35rem 0.75rem;
+      border: 1px solid #333;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      color: #333;
     }
 
     .pub-button:hover {
-        background: #f0f0f0;
+      background: #f0f0f0;
+    }
+
+    /* Mobile */
+    @media (max-width: 700px) {
+      .hero {
+        flex-wrap: wrap;
+      }
+      .hero-photo {
+        justify-content: center;
+      }
+      .pub-item {
+        flex-direction: column;
+        align-items: center;
+      }
+      .pub-thumb {
+        width: 70%;
+        max-width: 250px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <!-- Top navigation bar -->
+  <!-- Navigation -->
   <header class="nav">
     <div class="nav-inner">
       <div class="nav-left">Siddharth Sharma</div>
@@ -231,30 +219,29 @@
     </div>
   </header>
 
-  <!-- Page content -->
+  <!-- PAGE -->
   <main class="page">
-    <!-- Hero / about summary row -->
+
+    <!-- HERO SECTION -->
     <section id="about" class="hero">
       <div class="hero-text">
         <h1>Siddharth Sharma</h1>
-        <div class="subtitle">
-          BS/MS in Computer Science @ UC San Diego
-        </div>
+        <div class="subtitle">BS/MS in Computer Science @ UC San Diego</div>
+
         <div class="tagline">
           I’m interested in <strong>machine learning × systems</strong> —
           efficient ML, hyperdimensional computing, diffusion acceleration, and cost-aware LLM agents.
         </div>
 
         <div class="icon-row">
-          <!-- Put email_icon.png, github_icon.png, linkedin_icon.png in the same folder -->
           <a href="mailto:sis004@ucsd.edu">
             <img src="email.png" class="icon-img" alt="email" />
           </a>
-          
+
           <a href="https://github.com/sid10july" target="_blank">
             <img src="github.png" class="icon-img" alt="github" />
           </a>
-          
+
           <a href="https://www.linkedin.com/in/sid10july/" target="_blank">
             <img src="linkedin.png" class="icon-img" alt="linkedin" />
           </a>
@@ -266,94 +253,86 @@
       </div>
     </section>
 
-    <!-- Full-width explanation text below hero -->
+    <!-- ABOUT BODY -->
     <section class="about-body">
-        <p>
-          Hi 👋 I’m a BS/MS Computer Science student at UC San Diego, broadly interested in the intersection of
-          <strong>computer systems and machine learning</strong>. I enjoy building methods that make ML
-          <strong>faster, cheaper, and easier to run on real hardware</strong> — from edge devices to large
-          LLM-based systems.
-        </p>
-      
-        <p>
-          I’m currently applying to graduate programs where I can work on
-          <strong>efficient ML systems</strong>, including hyperdimensional computing (HDC), resource-aware
-          training and inference, and cost-aware LLM agents. My goal is to design learning systems that remain
-          usable even when compute, memory, or energy are limited.
-        </p>
-      
-        <p>
-          At UCSD’s <strong>System Energy &amp; Efficiency Lab (SEELab)</strong>, I work with Prof. Tajana
-          Rosing and Prof. Flavio Ponzina on <strong>unsupervised ensemble learning for edge AI and efficient ML methods</strong>.
-          I also contribute to the <strong>Hao AI Lab</strong>, working on system-level optimizations for
-          video-generation models, and I lead <strong>CoPAL-L</strong>, a cost-of-pass–aware LLM-agent framework
-          that jointly reasons about quality, latency, and monetary cost.
-        </p>
-      
-        <p>
-          Previously, I interned at <strong>Cadence</strong> (systems performance) and <strong>Sabre</strong>
-          (data science engineering), experiences that strengthened my interest in ML systems grounded in
-          real-world constraints.
-        </p>
-      
-        <p>
-          Outside of research, I enjoy mentoring students through UCSD’s PRISM/IDEA programs. If you’re working
-          on <strong>efficient ML systems, edge AI, or cost-aware LLM agents</strong>, I’d love to connect.
-        </p>
-      </section>
+      <p>
+        Hi 👋 I’m a BS/MS Computer Science student at UC San Diego, broadly interested in
+        <strong>machine learning × computer systems</strong>. I build methods that make ML
+        faster, cheaper, and more deployable on real hardware—from edge devices to large LLM-based systems.
+      </p>
 
-    <!-- Quick research blurb -->
+      <p>
+        I’m applying to graduate programs where I can work on efficient ML systems, including
+        hyperdimensional computing (HDC), resource-aware training & inference, and cost-aware LLM agents.
+      </p>
+
+      <p>
+        At UCSD’s <strong>System Energy &amp; Efficiency Lab (SEELab)</strong>, I work with
+        Prof. Tajana Rosing and Prof. Flavio Ponzina on unsupervised ensemble learning for efficient ML.
+        I also work in the <strong>Hao AI Lab</strong> on diffusion acceleration for video-generation models.
+      </p>
+
+      <p>
+        Previously, I interned at <strong>Cadence</strong> (systems performance) and
+        <strong>Sabre</strong> (data science engineering).
+      </p>
+    </section>
+
+    <!-- PUBLICATIONS -->
     <section id="research">
-        <h2>Selected publications &amp; research</h2>
-      
-        <!-- ICCD 2024 PAPER -->
-        <div class="pub-item">
-          <div class="pub-info">
-            <h3>Efficient Machine Learning for Edge/IoT with Hyperdimensional Computing</h3>
-            <p class="pub-authors">
-              <strong>S. Sharma</strong>, F. Ponzina, T. Rosing
-            </p>
-            <p class="pub-venue">
-              <em>ICCD 2024 &mdash; Accepted</em>
-            </p>
-      
-            <div class="pub-links">
-              <a href="https://www.computer.org/csdl/proceedings-article/iccd/2024/804000a691/23b5ksF89Hy" target="_blank" class="pub-button">PAPER</a>
-            </div>
+      <h2>Selected publications &amp; research</h2>
+
+      <!-- ICCD 2024 WITH THUMBNAIL -->
+      <div class="pub-item">
+        <img src="iccd.png" class="pub-thumb" alt="ICCD paper thumbnail" />
+
+        <div class="pub-info">
+          <h3>Multi-Model Inference Composition of
+            Hyperdimensional Computing Ensembles</h3>
+
+          <p class="pub-authors">
+            F. Ponzina, R. Chandrasekaran, A. Wang, S. Minowada,
+            <strong>S. Sharma</strong>, T. Rosing
+          </p>
+
+          <p class="pub-venue"><em>ICCD 2024 — Accepted</em></p>
+
+          <div class="pub-links">
+            <a href="https://www.computer.org/csdl/proceedings-article/iccd/2024/804000a691/23b5ksF89Hy"
+               target="_blank" class="pub-button">PAPER</a>
           </div>
         </div>
-      
-        <!-- MULTIPROJHD (UNDER SUBMISSION) -->
-        <div class="pub-item">
-          <div class="pub-info">
-            <h3>MultiProjHD: Unsupervised Ensemble Learning with Multiple Random Projections</h3>
-            <p class="pub-authors">
-              <strong>S. Sharma</strong>, F. Ponzina, T. Rosing
-            </p>
-            <p class="pub-venue">
-              <em>Under submission (DAC 2025)</em>
-            </p>
-      
-            <div class="pub-links">
-              <!-- Replace arxiv.html with your PDF later -->
-              <a href="#" class="pub-button">PDF (Coming Soon)</a>
-            </div>
+      </div>
+
+      <!-- MULTIPROJHD (SUBMISSION) WITH THUMBNAIL -->
+      <div class="pub-item">
+        <img src="DAC.png" class="pub-thumb" alt="MultiProjHD thumbnail" />
+
+        <div class="pub-info">
+          <h3>MultiProjHD: Unsupervised Ensemble Learning with Multiple Random Projections</h3>
+
+          <p class="pub-authors">
+            <strong>S. Sharma</strong>, A. Wang, S. Minowada, F. Ponzina, T. Rosing
+          </p>
+
+          <p class="pub-venue"><em>Under submission (DAC 2025)</em></p>
+
+          <div class="pub-links">
+            <a href="#" class="pub-button">PDF (Coming Soon)</a>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-    
-
-    <!-- Academics -->
+    <!-- ACADEMICS -->
     <section id="academics">
       <h2>Academics</h2>
       <p>
-        I’m currently completing a combined <strong>BS/MS in Computer
-        Science</strong> at UC San Diego. On the coursework side, I’ve focused
-        on machine learning, systems, and related areas. I’ll add a more
-        detailed course list and teaching/mentoring roles here soon.
+        I’m completing a combined BS/MS in Computer Science at UC San Diego with a focus on
+        machine learning, systems, and efficient computing.
       </p>
     </section>
+
   </main>
 </body>
 </html>
