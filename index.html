@@ -169,6 +169,52 @@
         justify-content: center;
       }
     }
+
+        /* Publication list styling */
+    .pub-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+    }
+
+    .pub-info {
+        flex: 1;
+    }
+
+    .pub-info h3 {
+        margin: 0;
+        font-size: 1.35rem;
+        font-weight: 600;
+    }
+
+    .pub-authors {
+        margin: 0.3rem 0 0.3rem 0;
+        color: #444;
+    }
+
+    .pub-venue {
+        margin: 0.2rem 0 0.8rem 0;
+        font-size: 1rem;
+        color: #666;
+    }
+
+    .pub-links {
+        display: flex;
+        gap: 0.75rem;
+    }
+
+    .pub-button {
+        padding: 0.35rem 0.75rem;
+        border: 1px solid #333;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        text-decoration: none;
+        color: #333;
+    }
+
+    .pub-button:hover {
+        background: #f0f0f0;
+    }
   </style>
 </head>
 
@@ -180,7 +226,6 @@
       <nav class="nav-right">
         <a href="#about">about</a>
         <a href="#research">research</a>
-        <a href="#projects">projects</a>
         <a href="#academics">academics</a>
       </nav>
     </div>
@@ -259,53 +304,45 @@
 
     <!-- Quick research blurb -->
     <section id="research">
-      <h2>Selected research interests &amp; projects</h2>
-      <ul>
-        <li>
-          <strong>MultiProjHD (lead author, under submission)</strong> –
-          unsupervised ensemble learning with multiple random projections and
-          centroid alignment to reduce memory/compute cost while improving
-          clustering accuracy on image benchmarks.
-        </li>
-        <li>
-          <strong>ICCD&nbsp;2024 paper (co-author)</strong> – efficient ML
-          methods for edge/IoT settings, focusing on energy-aware
-          hyperdimensional computing.
-        </li>
-        <li>
-          <strong>CoPAL-L (in progress)</strong> – a cost-of-pass–aware LLM
-          agent framework that jointly reasons about quality, latency, and
-          dollar cost when planning tool calls.
-        </li>
-        <li>
-          <strong>Unsupervised HDC ensembles on MNIST/CIFAR-10</strong> –
-          exploring bagging, gentle centroid merging, and affinity-based
-          clustering to improve unsupervised accuracy while keeping models
-          compact.
-        </li>
-      </ul>
-    </section>
+        <h2>Selected publications &amp; research</h2>
+      
+        <!-- ICCD 2024 PAPER -->
+        <div class="pub-item">
+          <div class="pub-info">
+            <h3>Efficient Machine Learning for Edge/IoT with Hyperdimensional Computing</h3>
+            <p class="pub-authors">
+              <strong>S. Sharma</strong>, F. Ponzina, T. Rosing
+            </p>
+            <p class="pub-venue">
+              <em>ICCD 2024 &mdash; Accepted</em>
+            </p>
+      
+            <div class="pub-links">
+              <a href="https://www.computer.org/csdl/proceedings-article/iccd/2024/804000a691/23b5ksF89Hy" target="_blank" class="pub-button">PAPER</a>
+            </div>
+          </div>
+        </div>
+      
+        <!-- MULTIPROJHD (UNDER SUBMISSION) -->
+        <div class="pub-item">
+          <div class="pub-info">
+            <h3>MultiProjHD: Unsupervised Ensemble Learning with Multiple Random Projections</h3>
+            <p class="pub-authors">
+              <strong>S. Sharma</strong>, F. Ponzina, T. Rosing
+            </p>
+            <p class="pub-venue">
+              <em>Under submission (DAC 2025)</em>
+            </p>
+      
+            <div class="pub-links">
+              <!-- Replace arxiv.html with your PDF later -->
+              <a href="#" class="pub-button">PDF (Coming Soon)</a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <!-- Projects -->
-    <section id="projects">
-      <h2>Selected projects</h2>
-      <ul>
-        <li>
-          <strong>Stock forecasting MVP</strong> – S&amp;P&nbsp;500 time-series
-          forecasting using ARIMA and gradient-boosted trees, with
-          macro-economic indicators and rolling-window evaluation.
-        </li>
-        <li>
-          <strong>Music representation &amp; classification</strong> – models
-          for composer classification, sequence prediction, and music tagging
-          using MIDI/audio features, LSTMs, and transformers.
-        </li>
-        <li>
-          <strong>Course projects</strong> – work in ML, systems, and HCI at
-          UCSD; details coming soon.
-        </li>
-      </ul>
-    </section>
+    
 
     <!-- Academics -->
     <section id="academics">
