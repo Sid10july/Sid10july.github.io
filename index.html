@@ -6,9 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -24,9 +22,7 @@
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
+    a:hover { text-decoration: underline; }
 
     /* Top nav */
     .nav {
@@ -46,10 +42,7 @@
       justify-content: space-between;
     }
 
-    .nav-left {
-      font-weight: 700;
-    }
-
+    .nav-left { font-weight: 700; }
     .nav-right a {
       margin-left: 1rem;
       font-size: 0.95rem;
@@ -62,23 +55,22 @@
       padding: 2rem 1.25rem 3rem 1.25rem;
     }
 
-    /* HERO LAYOUT — TEXT LEFT, PHOTO RIGHT */
+    /* HERO: only top block (name + tagline + links vs photo) */
     .hero {
       display: flex;
       flex-wrap: nowrap;
       gap: 3rem;
-      align-items: flex-start;
-      margin-bottom: 2rem;
+      align-items: center;
+      margin-bottom: 2.5rem;
     }
 
     .hero-text {
-      flex: 4;        /* Text gets most of the width */
+      flex: 4;
       width: 100%;
-      max-width: none;
     }
 
     .hero-photo {
-      flex: 1;       /* Photo column */
+      flex: 1;
       display: flex;
       justify-content: flex-end;
       min-width: 220px;
@@ -92,7 +84,7 @@
 
     h1 {
       margin-bottom: 0.25rem;
-      font-size: 2.2rem;
+      font-size: 2.4rem;
     }
 
     .subtitle {
@@ -109,30 +101,33 @@
 
     .icon-row {
       margin-top: 0.6rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.3rem;
       font-size: 0.95rem;
     }
 
-    .icon-row a {
-      margin-right: 0.9rem;
+    .icon-row a { margin-right: 0.9rem; }
+
+    /* Full-width about text under the hero */
+    .about-body {
+      max-width: 100%;
+      margin-top: 1.5rem;
     }
 
-    h2 {
-      margin-top: 2.5rem;
-      margin-bottom: 0.5rem;
-      font-size: 1.35rem;
-    }
-
-    ul {
-      padding-left: 1.2rem;
+    .about-body p {
+      max-width: 900px;           /* keeps lines readable */
+      margin: 0 auto 1rem auto;   /* center within page */
     }
 
     @media (max-width: 800px) {
       .hero {
         flex-wrap: wrap;
+        align-items: flex-start;
       }
       .hero-photo {
         justify-content: center;
+      }
+      .about-body p {
+        max-width: 100%;
       }
     }
   </style>
@@ -153,14 +148,9 @@
 
   <!-- Page content -->
   <main class="page">
+
+    <!-- TOP HERO: name + short blurb + links, with photo on the right -->
     <section id="about" class="hero">
-
-      <!-- PHOTO ON THE RIGHT -->
-      <div class="hero-photo">
-        <img src="Sid.png" alt="Siddharth Sharma" />
-      </div>
-
-      <!-- FULL-WIDTH TEXT ON THE LEFT -->
       <div class="hero-text">
         <h1>Siddharth Sharma</h1>
 
@@ -178,45 +168,51 @@
           · <a href="https://github.com/sid10july" target="_blank">github</a>
           · <a href="https://www.linkedin.com/in/sid10july/" target="_blank">linkedin</a>
         </div>
-
-        <p>
-          Hi 👋 I’m currently a BS/MS student in Computer Science at UC San Diego,
-          broadly interested in the intersection of
-          <strong>computer systems and machine learning</strong>. I like
-          building methods that make ML <strong>faster, cheaper, and easier
-          to run on real hardware</strong> — from edge devices to larger
-          LLM-based systems.
-        </p>
-
-        <p>
-          Right now I’m applying to graduate programs where I can work on
-          <strong>efficient ML systems</strong>, including topics like
-          hyperdimensional computing (HDC), resource-aware training and
-          inference, and cost-aware LLM agents. My long-term goal is to design
-          learning systems that keep state-of-the-art models usable even when
-          compute, memory, or energy are limited.
-        </p>
-
-        <p>
-          I currently work in the <strong>System Energy &amp; Efficiency Lab (SEELab)</strong> at UCSD with Professor Tajana Rosing and Professor Flavio Ponzina, where I’ve been exploring 
-          <strong>unsupervised ensemble learning with high-dimensional computing</strong>. I’m the lead author on a work under submission (MultiProjHD) that studies how random projections and centroid alignment can reduce memory and compute while improving clustering accuracy, and I co-authored a paper accepted to <strong>ICCD 2024</strong>.
-        </p>
-
-        <p>
-          I also contribute to the <strong>Hao AI Lab</strong> under Prof. Hao Zhang, working on <strong>FastVideo</strong> — accelerating video diffusion models using low-rank decomposition and system-level optimizations to improve throughput on modern hardware.
-          In addition, I’m leading <strong>CoPAL-L</strong>, a cost-of-pass–aware LLM-agent framework that reasons jointly about quality, latency, and monetary cost when planning tool calls.
-        </p>
-
-        <p>
-          Previously, I worked as a <strong>System Software Engineering Intern at Cadence</strong>, focusing on multi-socket server utilization and performance regression pipelines, and as a <strong>Data Science Engineering Intern at Sabre</strong>, where I built forecasting pipelines with XGBoost, BigQuery, and production ETL workflows.
-        </p>
-
-        <p>
-          Outside of research, I enjoy mentoring students new to ML and systems
-          and have been involved with UCSD’s PRISM/IDEA programs and various course projects.
-        </p>
-
       </div>
+
+      <div class="hero-photo">
+        <img src="Sid.png" alt="Siddharth Sharma" />
+      </div>
+    </section>
+
+    <!-- FULL-WIDTH ABOUT TEXT BELOW HERO -->
+    <section class="about-body">
+      <p>
+        Hi 👋 I’m currently a BS/MS student in Computer Science at UC San Diego,
+        broadly interested in the intersection of
+        <strong>computer systems and machine learning</strong>. I like
+        building methods that make ML <strong>faster, cheaper, and easier
+        to run on real hardware</strong> — from edge devices to larger
+        LLM-based systems.
+      </p>
+
+      <p>
+        Right now I’m applying to graduate programs where I can work on
+        <strong>efficient ML systems</strong>, including topics like
+        hyperdimensional computing (HDC), resource-aware training and
+        inference, and cost-aware LLM agents. My long-term goal is to design
+        learning systems that keep state-of-the-art models usable even when
+        compute, memory, or energy are limited.
+      </p>
+
+      <p>
+        I currently work in the <strong>System Energy &amp; Efficiency Lab (SEELab)</strong> at UCSD with Professor Tajana Rosing and Professor Flavio Ponzina, where I’ve been exploring
+        <strong>unsupervised ensemble learning with high-dimensional computing</strong>. I’m the lead author on a work under submission (MultiProjHD) that studies how random projections and centroid alignment can reduce memory and compute while improving clustering accuracy, and I co-authored a paper accepted to <strong>ICCD 2024</strong>.
+      </p>
+
+      <p>
+        I also contribute to the <strong>Hao AI Lab</strong> under Prof. Hao Zhang, working on <strong>FastVideo</strong> — accelerating video diffusion models using low-rank decomposition and system-level optimizations to improve throughput on modern hardware.
+        In addition, I’m leading <strong>CoPAL-L</strong>, a cost-of-pass–aware LLM-agent framework that reasons jointly about quality, latency, and monetary cost when planning tool calls.
+      </p>
+
+      <p>
+        Previously, I worked as a <strong>System Software Engineering Intern at Cadence</strong>, focusing on multi-socket server utilization and performance regression pipelines, and as a <strong>Data Science Engineering Intern at Sabre</strong>, where I built forecasting pipelines with XGBoost, BigQuery, and production ETL workflows.
+      </p>
+
+      <p>
+        Outside of research, I enjoy mentoring students new to ML and systems
+        and have been involved with UCSD’s PRISM/IDEA programs and various course projects.
+      </p>
     </section>
   </main>
 </body>
