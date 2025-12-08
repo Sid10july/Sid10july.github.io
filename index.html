@@ -63,7 +63,7 @@
       padding: 2rem 1.25rem 3rem 1.25rem;
     }
 
-    .hero {
+    /* .hero {
       display: flex;
       flex-wrap: wrap;
       gap: 1.5rem;
@@ -79,6 +79,25 @@
       flex: 1 1 200px;
       display: flex;
       justify-content: center;
+    } */
+    .hero {
+        display: flex;
+        flex-wrap: nowrap;   /* prevent it from wrapping too early */
+        gap: 3rem;           /* more breathing room */
+        align-items: flex-start;
+        margin-bottom: 2rem;
+    }
+
+    .hero-text {
+        flex: 3;             /* give the text 3x more space */
+        max-width: 750px;    /* allow wide readable text */
+    }
+
+    .hero-photo {
+        flex: 1;             /* photo gets less space */
+        display: flex;
+        justify-content: center;
+        min-width: 180px;    /* prevents shrinking too much */
     }
 
     .hero-photo img {
@@ -178,7 +197,7 @@
           <!-- Update these links when you have them -->
           📧 <a href="sis004@ucsd.edu">email</a>
           · <a href="https://github.com/sid10july" target="_blank">github</a>
-          · <a href="https://www.linkedin.com/in/YOUR_LINKEDIN/" target="_blank">linkedin</a>
+          · <a href="https://www.linkedin.com/in/sid10july/" target="_blank">linkedin</a>
           <!-- add scholar when ready -->
         </div>
 
