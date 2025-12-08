@@ -5,7 +5,6 @@
   <title>Siddharth Sharma</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Simple in-page styling so you don't need a separate CSS file yet -->
   <style>
     * {
       box-sizing: border-box;
@@ -63,47 +62,26 @@
       padding: 2rem 1.25rem 3rem 1.25rem;
     }
 
-    /* .hero {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      align-items: flex-start;
+    /* Hero layout: photo above, text full width */
+    .hero {
       margin-bottom: 2rem;
     }
 
-    .hero-text {
-      flex: 2 1 280px;
-    }
-
     .hero-photo {
-      flex: 1 1 200px;
       display: flex;
       justify-content: center;
-    } */
-    .hero {
-        display: flex;
-        flex-wrap: nowrap;   /* prevent it from wrapping too early */
-        gap: 3rem;           /* more breathing room */
-        align-items: flex-start;
-        margin-bottom: 2rem;
-    }
-
-    .hero-text {
-        flex: 3;             /* give the text 3x more space */
-        max-width: 750px;    /* allow wide readable text */
-    }
-
-    .hero-photo {
-        flex: 1;             /* photo gets less space */
-        display: flex;
-        justify-content: center;
-        min-width: 180px;    /* prevents shrinking too much */
+      margin-bottom: 1.75rem;
     }
 
     .hero-photo img {
       max-width: 220px;
       border-radius: 16px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+    }
+
+    .hero-text {
+      max-width: 960px;
+      margin: 0 auto;
     }
 
     h1 {
@@ -149,11 +127,6 @@
       padding-left: 1.2rem;
     }
 
-    .cv-link {
-      margin-top: 0.75rem;
-      font-size: 0.95rem;
-    }
-
     @media (max-width: 700px) {
       .nav-inner {
         flex-direction: column;
@@ -170,19 +143,21 @@
     <div class="nav-inner">
       <div class="nav-left">Siddharth Sharma</div>
       <nav class="nav-right">
-        <a href="#about">about</a>
-        <a href="#research">research</a>
-        <a href="#projects">projects</a>
-        <a href="#academics">academics</a>
-        <!-- <a href="#cv">cv</a> -->
+        <a href="index.html">about</a>
+        <a href="research.html">research</a>
+        <a href="academics.html">academics</a>
       </nav>
     </div>
   </header>
 
   <!-- Page content -->
   <main class="page">
-    <!-- Hero / about section -->
     <section id="about" class="hero">
+      <div class="hero-photo">
+        <!-- Replace 'Sid.png' with your actual file name if needed -->
+        <img src="Sid.png" alt="Siddharth Sharma" />
+      </div>
+
       <div class="hero-text">
         <h1>Siddharth Sharma</h1>
         <div class="subtitle">
@@ -194,11 +169,9 @@
         </div>
 
         <div class="icon-row">
-          <!-- Update these links when you have them -->
-          📧 <a href="sis004@ucsd.edu">email</a>
+          📧 <a href="mailto:sis004@ucsd.edu">email</a>
           · <a href="https://github.com/sid10july" target="_blank">github</a>
           · <a href="https://www.linkedin.com/in/sid10july/" target="_blank">linkedin</a>
-          <!-- add scholar when ready -->
         </div>
 
         <p>
@@ -220,14 +193,14 @@
         </p>
 
         <p>
-            I currently work in the <strong>System Energy &amp; Efficiency Lab (SEELab)</strong> at UCSD with Professor Tajana Rosing and Professor Flavio Ponzina, where I’ve been exploring 
-            <strong>unsupervised ensemble learning with high-dimensional computing</strong>. I’m the lead author on a work under submission (MultiProjHD) that studies how random projections and centroid alignment can reduce memory and compute while improving clustering accuracy, and I co-authored a paper accepted to <strong>ICCD&nbsp;2024</strong> on efficient ML for edge/IoT settings. 
-          </p>
-          
-          <p>
-            I also contribute to the <strong>Hao AI Lab</strong>, working on <strong>FastVideo</strong> — a project focused on accelerating video diffusion models through low-rank decomposition and other system-level optimizations aimed at improving throughput on modern hardware. 
-            In addition, I’m currently leading <strong>CoPAL-L</strong>, a cost-of-pass–aware LLM-agent framework designed to reason jointly about quality, latency, and monetary cost when planning tool calls.
-          </p>
+          I currently work in the <strong>System Energy &amp; Efficiency Lab (SEELab)</strong> at UCSD with Professor Tajana Rosing and Professor Flavio Ponzina, where I’ve been exploring
+          <strong>unsupervised ensemble learning with high-dimensional computing</strong>. I’m the lead author on a work under submission (MultiProjHD) that studies how random projections and centroid alignment can reduce memory and compute while improving clustering accuracy, and I co-authored a paper accepted to <strong>ICCD&nbsp;2024</strong> on efficient ML for edge/IoT settings.
+        </p>
+
+        <p>
+          I also contribute to the <strong>Hao AI Lab</strong>, under Prof. Hao Zhang, working on <strong>FastVideo</strong> — a project focused on accelerating video diffusion models through low-rank decomposition and other system-level optimizations aimed at improving throughput on modern hardware.
+          In addition, I’m currently leading <strong>CoPAL-L</strong>, a cost-of-pass–aware LLM-agent framework designed to reason jointly about quality, latency, and monetary cost when planning tool calls.
+        </p>
 
         <p>
           Previously, I worked as a <strong>System Software Engineering
@@ -247,80 +220,7 @@
           If you’re working on <strong>efficient ML systems, HDC, or
           cost-aware LLM agents</strong>, I’d love to connect.
         </p>
-
-        <!-- <div class="cv-link" id="cv">
-          📄 <a href="Siddharth_Sharma_Resume(old).pdf" target="_blank">
-            Download my CV
-          </a> -->
-          <!-- update filename when you upload the latest CV -->
-        </div>
       </div>
-
-      <div class="hero-photo">
-        <!-- Replace 'photo.jpg' with your actual photo file name -->
-        <img src="Sid.png" alt="Siddharth Sharma" />
-      </div>
-    </section>
-
-    <!-- Quick research blurb -->
-    <section id="research">
-      <h2>Selected research interests &amp; projects</h2>
-      <ul>
-        <li>
-          <strong>MultiProjHD (lead author, under submission)</strong> –
-          unsupervised ensemble learning with multiple random projections and
-          centroid alignment to reduce memory/compute cost while improving
-          clustering accuracy on image benchmarks.
-        </li>
-        <li>
-          <strong>ICCD&nbsp;2024 paper (co-author)</strong> – efficient ML
-          methods for edge/IoT settings, focusing on energy-aware
-          hyperdimensional computing.
-        </li>
-        <li>
-          <strong>CoPAL-L (in progress)</strong> – a cost-of-pass–aware LLM
-          agent framework that jointly reasons about quality, latency, and
-          dollar cost when planning tool calls.
-        </li>
-        <li>
-          <strong>Unsupervised HDC ensembles on MNIST/CIFAR-10</strong> –
-          exploring bagging, gentle centroid merging, and affinity-based
-          clustering to improve unsupervised accuracy while keeping models
-          compact.
-        </li>
-      </ul>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects">
-      <h2>Selected projects</h2>
-      <ul>
-        <li>
-          <strong>Stock forecasting MVP</strong> – S&amp;P&nbsp;500 time-series
-          forecasting using ARIMA and gradient-boosted trees, with
-          macro-economic indicators and rolling-window evaluation.
-        </li>
-        <li>
-          <strong>Music representation &amp; classification</strong> – models
-          for composer classification, sequence prediction, and music tagging
-          using MIDI/audio features, LSTMs, and transformers.
-        </li>
-        <li>
-          <strong>Course projects</strong> – work in ML, systems, and HCI at
-          UCSD; details coming soon.
-        </li>
-      </ul>
-    </section>
-
-    <!-- Academics -->
-    <section id="academics">
-      <h2>Academics</h2>
-      <p>
-        I’m currently completing a combined <strong>BS/MS in Computer
-        Science</strong> at UC San Diego. On the coursework side, I’ve focused
-        on machine learning, systems, and related areas. I’ll add a more
-        detailed course list and teaching/mentoring roles here soon.
-      </p>
     </section>
   </main>
 </body>
