@@ -38,7 +38,7 @@
     }
 
     .nav-inner {
-      max-width: 960px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 0.75rem 1.25rem;
       display: flex;
@@ -55,38 +55,66 @@
       font-size: 0.95rem;
     }
 
-    /* Main content */
+    /* Main page width */
     .page {
-      max-width: 960px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 2rem 1.25rem 3rem 1.25rem;
     }
 
-    /* Hero layout: photo above, text full width */
+    /* HERO LAYOUT — TEXT LEFT, PHOTO RIGHT */
     .hero {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 3rem;
+      align-items: flex-start;
       margin-bottom: 2rem;
     }
 
+    .hero-text {
+      flex: 4;        /* Text gets most of the width */
+      width: 100%;
+      max-width: none;
+    }
+
     .hero-photo {
+      flex: 1;       /* Photo column */
       display: flex;
-      justify-content: center;
-      margin-bottom: 1.75rem;
+      justify-content: flex-end;
+      min-width: 220px;
     }
 
     .hero-photo img {
-      max-width: 220px;
+      max-width: 240px;
       border-radius: 16px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
-    }
-
-    .hero-text {
-      max-width: 960px;
-      margin: 0 auto;
     }
 
     h1 {
       margin-bottom: 0.25rem;
       font-size: 2.2rem;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: #555;
+      margin-bottom: 0.75rem;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      color: #777;
+      margin-bottom: 1rem;
+    }
+
+    .icon-row {
+      margin-top: 0.6rem;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .icon-row a {
+      margin-right: 0.9rem;
     }
 
     h2 {
@@ -95,43 +123,16 @@
       font-size: 1.35rem;
     }
 
-    h3 {
-      margin-top: 1rem;
-      margin-bottom: 0.25rem;
-      font-size: 1.05rem;
-    }
-
-    .subtitle {
-      font-size: 1rem;
-      color: #555;
-      margin-bottom: 0.75rem;
-    }
-
-    .tagline {
-      font-size: 0.95rem;
-      color: #777;
-      margin-bottom: 1rem;
-    }
-
-    .icon-row {
-      margin-top: 0.6rem;
-      margin-bottom: 0.6rem;
-      font-size: 0.95rem;
-    }
-
-    .icon-row a {
-      margin-right: 0.9rem;
-    }
-
     ul {
       padding-left: 1.2rem;
     }
 
-    @media (max-width: 700px) {
-      .nav-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.4rem;
+    @media (max-width: 800px) {
+      .hero {
+        flex-wrap: wrap;
+      }
+      .hero-photo {
+        justify-content: center;
       }
     }
   </style>
@@ -153,16 +154,20 @@
   <!-- Page content -->
   <main class="page">
     <section id="about" class="hero">
+
+      <!-- PHOTO ON THE RIGHT -->
       <div class="hero-photo">
-        <!-- Replace 'Sid.png' with your actual file name if needed -->
         <img src="Sid.png" alt="Siddharth Sharma" />
       </div>
 
+      <!-- FULL-WIDTH TEXT ON THE LEFT -->
       <div class="hero-text">
         <h1>Siddharth Sharma</h1>
+
         <div class="subtitle">
           BS/MS in Computer Science @ UC San Diego
         </div>
+
         <div class="tagline">
           I’m interested in <strong>systems × machine learning</strong> —
           efficient ML, hyperdimensional computing, and cost-aware LLM agents.
@@ -193,33 +198,24 @@
         </p>
 
         <p>
-          I currently work in the <strong>System Energy &amp; Efficiency Lab (SEELab)</strong> at UCSD with Professor Tajana Rosing and Professor Flavio Ponzina, where I’ve been exploring
-          <strong>unsupervised ensemble learning with high-dimensional computing</strong>. I’m the lead author on a work under submission (MultiProjHD) that studies how random projections and centroid alignment can reduce memory and compute while improving clustering accuracy, and I co-authored a paper accepted to <strong>ICCD&nbsp;2024</strong> on efficient ML for edge/IoT settings.
+          I currently work in the <strong>System Energy &amp; Efficiency Lab (SEELab)</strong> at UCSD with Professor Tajana Rosing and Professor Flavio Ponzina, where I’ve been exploring 
+          <strong>unsupervised ensemble learning with high-dimensional computing</strong>. I’m the lead author on a work under submission (MultiProjHD) that studies how random projections and centroid alignment can reduce memory and compute while improving clustering accuracy, and I co-authored a paper accepted to <strong>ICCD 2024</strong>.
         </p>
 
         <p>
-          I also contribute to the <strong>Hao AI Lab</strong>, under Prof. Hao Zhang, working on <strong>FastVideo</strong> — a project focused on accelerating video diffusion models through low-rank decomposition and other system-level optimizations aimed at improving throughput on modern hardware.
-          In addition, I’m currently leading <strong>CoPAL-L</strong>, a cost-of-pass–aware LLM-agent framework designed to reason jointly about quality, latency, and monetary cost when planning tool calls.
+          I also contribute to the <strong>Hao AI Lab</strong> under Prof. Hao Zhang, working on <strong>FastVideo</strong> — accelerating video diffusion models using low-rank decomposition and system-level optimizations to improve throughput on modern hardware.
+          In addition, I’m leading <strong>CoPAL-L</strong>, a cost-of-pass–aware LLM-agent framework that reasons jointly about quality, latency, and monetary cost when planning tool calls.
         </p>
 
         <p>
-          Previously, I worked as a <strong>System Software Engineering
-          Intern at Cadence</strong>, focusing on multi-socket server
-          utilization and performance regression pipelines, and as a
-          <strong>Data Science Engineering Intern at Sabre</strong>, where I
-          built forecasting pipelines with XGBoost, BigQuery, and production
-          ETL workflows. These experiences convinced me that the most
-          impactful ML work sits at the boundary of algorithms, systems, and
-          real-world constraints.
+          Previously, I worked as a <strong>System Software Engineering Intern at Cadence</strong>, focusing on multi-socket server utilization and performance regression pipelines, and as a <strong>Data Science Engineering Intern at Sabre</strong>, where I built forecasting pipelines with XGBoost, BigQuery, and production ETL workflows.
         </p>
 
         <p>
-          Outside of research, I enjoy mentoring students who are new to ML
-          and systems and have been involved with UCSD’s PRISM/IDEA programs
-          and various course projects in machine learning, systems, and HCI.
-          If you’re working on <strong>efficient ML systems, HDC, or
-          cost-aware LLM agents</strong>, I’d love to connect.
+          Outside of research, I enjoy mentoring students new to ML and systems
+          and have been involved with UCSD’s PRISM/IDEA programs and various course projects.
         </p>
+
       </div>
     </section>
   </main>
