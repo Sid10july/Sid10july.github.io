@@ -1,13 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Sid's Website</title>
-</head>
-<body>
-    <h1>Welcome to Sid's Website!</h1>
+  <meta charset="UTF-8" />
+  <title>Siddharth Sharma</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Add a link to your resume -->
-    <iframe src="Siddharth_Sharma_Resume(old).pdf" width="100%" height="800px" style="border: none;"></iframe>
+  <!-- Simple in-page styling so you don't need a separate CSS file yet -->
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background: #fafafa;
+    }
+
+    a {
+      color: #e76f51;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Top nav */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: white;
+      border-bottom: 1px solid #eee;
+    }
+
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-left {
+      font-weight: 700;
+    }
+
+    .nav-right a {
+      margin-left: 1rem;
+      font-size: 0.95rem;
+    }
+
+    /* Main content */
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 3rem 1.25rem;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+    }
+
+    .hero-text {
+      flex: 2 1 280px;
+    }
+
+    .hero-photo {
+      flex: 1 1 200px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-photo img {
+      max-width: 220px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+    }
+
+    h1 {
+      margin-bottom: 0.25rem;
+      font-size: 2.2rem;
+    }
+
+    h2 {
+      margin-top: 2.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.35rem;
+    }
+
+    h3 {
+      margin-top: 1rem;
+      margin-bottom: 0.25rem;
+      font-size: 1.05rem;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 0.75rem;
+    }
+
+    .tagline {
+      font-size: 0.95rem;
+      color: #777;
+      margin-bottom: 1rem;
+    }
+
+    .icon-row {
+      margin-top: 0.6rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
+    }
+
+    .icon-row a {
+      margin-right: 0.9rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    .cv-link {
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 700px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top navigation bar -->
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="nav-left">Siddharth Sharma</div>
+      <nav class="nav-right">
+        <a href="#about">about</a>
+        <a href="#research">research</a>
+        <a href="#projects">projects</a>
+        <a href="#academics">academics</a>
+        <a href="#cv">cv</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page content -->
+  <main class="page">
+    <!-- Hero / about section -->
+    <section id="about" class="hero">
+      <div class="hero-text">
+        <h1>Siddharth Sharma</h1>
+        <div class="subtitle">
+          BS/MS in Computer Science @ UC San Diego
+        </div>
+        <div class="tagline">
+          I’m interested in <strong>systems × machine learning</strong> —
+          efficient ML, hyperdimensional computing, and cost-aware LLM agents.
+        </div>
+
+        <div class="icon-row">
+          <!-- Update these links when you have them -->
+          📧 <a href="mailto:YOUR_EMAIL_HERE">email</a>
+          · <a href="https://github.com/sid10july" target="_blank">github</a>
+          · <a href="https://www.linkedin.com/in/YOUR_LINKEDIN/" target="_blank">linkedin</a>
+          <!-- add scholar when ready -->
+        </div>
+
+        <p>
+          Hi 👋 I’m a BS/MS student in Computer Science at UC San Diego,
+          broadly interested in the intersection of
+          <strong>computer systems and machine learning</strong>. I like
+          building methods that make ML <strong>faster, cheaper, and easier
+          to run on real hardware</strong> — from edge devices to larger
+          LLM-based systems.
+        </p>
+
+        <p>
+          Right now I’m applying to graduate programs where I can work on
+          <strong>efficient ML systems</strong>, including topics like
+          hyperdimensional computing (HDC), resource-aware training and
+          inference, and cost-aware LLM agents. My long-term goal is to design
+          learning systems that keep state-of-the-art models usable even when
+          compute, memory, or energy are limited.
+        </p>
+
+        <p>
+          I currently work in the <strong>System Energy &amp; Efficiency Lab
+          (SEELab)</strong> at UCSD with Professor Tajana Rosing and
+          collaborators at SDSU, where I’ve been exploring
+          <strong>unsupervised ensemble learning with high-dimensional
+          computing</strong>. I’m the lead author on a work under submission
+          (MultiProjHD) that studies how random projections and centroid
+          alignment can reduce memory and compute while improving clustering
+          accuracy, and I co-authored a paper accepted to
+          <strong>ICCD&nbsp;2024</strong> on efficient ML for edge/IoT
+          settings. I’m also helping build <strong>CoPAL-L</strong>, a
+          cost-of-pass–aware LLM-agent framework designed to reason about
+          latency and monetary cost while planning tool calls.
+        </p>
+
+        <p>
+          Previously, I worked as a <strong>System Software Engineering
+          Intern at Cadence</strong>, focusing on multi-socket server
+          utilization and performance regression pipelines, and as a
+          <strong>Data Science Engineering Intern at Sabre</strong>, where I
+          built forecasting pipelines with XGBoost, BigQuery, and production
+          ETL workflows. These experiences convinced me that the most
+          impactful ML work sits at the boundary of algorithms, systems, and
+          real-world constraints.
+        </p>
+
+        <p>
+          Outside of research, I enjoy mentoring students who are new to ML
+          and systems and have been involved with UCSD’s PRISM/IDEA programs
+          and various course projects in machine learning, systems, and HCI.
+          If you’re working on <strong>efficient ML systems, HDC, or
+          cost-aware LLM agents</strong>, I’d love to connect.
+        </p>
+
+        <div class="cv-link" id="cv">
+          📄 <a href="Siddharth_Sharma_Resume(old).pdf" target="_blank">
+            Download my CV
+          </a>
+          <!-- update filename when you upload the latest CV -->
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        <!-- Replace 'photo.jpg' with your actual photo file name -->
+        <img src="photo.jpg" alt="Siddharth Sharma" />
+      </div>
+    </section>
+
+    <!-- Quick research blurb -->
+    <section id="research">
+      <h2>Selected research interests &amp; projects</h2>
+      <ul>
+        <li>
+          <strong>MultiProjHD (lead author, under submission)</strong> –
+          unsupervised ensemble learning with multiple random projections and
+          centroid alignment to reduce memory/compute cost while improving
+          clustering accuracy on image benchmarks.
+        </li>
+        <li>
+          <strong>ICCD&nbsp;2024 paper (co-author)</strong> – efficient ML
+          methods for edge/IoT settings, focusing on energy-aware
+          hyperdimensional computing.
+        </li>
+        <li>
+          <strong>CoPAL-L (in progress)</strong> – a cost-of-pass–aware LLM
+          agent framework that jointly reasons about quality, latency, and
+          dollar cost when planning tool calls.
+        </li>
+        <li>
+          <strong>Unsupervised HDC ensembles on MNIST/CIFAR-10</strong> –
+          exploring bagging, gentle centroid merging, and affinity-based
+          clustering to improve unsupervised accuracy while keeping models
+          compact.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Selected projects</h2>
+      <ul>
+        <li>
+          <strong>Stock forecasting MVP</strong> – S&amp;P&nbsp;500 time-series
+          forecasting using ARIMA and gradient-boosted trees, with
+          macro-economic indicators and rolling-window evaluation.
+        </li>
+        <li>
+          <strong>Music representation &amp; classification</strong> – models
+          for composer classification, sequence prediction, and music tagging
+          using MIDI/audio features, LSTMs, and transformers.
+        </li>
+        <li>
+          <strong>Course projects</strong> – work in ML, systems, and HCI at
+          UCSD; details coming soon.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Academics -->
+    <section id="academics">
+      <h2>Academics</h2>
+      <p>
+        I’m currently completing a combined <strong>BS/MS in Computer
+        Science</strong> at UC San Diego. On the coursework side, I’ve focused
+        on machine learning, systems, and related areas. I’ll add a more
+        detailed course list and teaching/mentoring roles here soon.
+      </p>
+    </section>
+  </main>
 </body>
 </html>
